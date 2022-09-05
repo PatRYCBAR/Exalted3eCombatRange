@@ -47,15 +47,32 @@ table, td, th{
   border-color: black;
   border-style: solid;
   border-collapse: collapse;
+}
+
+th{
   padding: 10px;
 }
 
+td{
+  padding: 3px;
+}
+
 .top_row {
-  font-size: 24px;
+  font-size: 1.5em;
 }
 
 textarea {
-  font-size: 16px;
+  font-size: 1.1em;
+  width: 10em;
+  height: 3.3em;
+}
+
+textarea.close_center {
+  height: 1.1em;
+}
+
+textarea.close_add {
+  height: 4.4em;
 }
 
 </style>
@@ -65,10 +82,13 @@ textarea {
 <h1>Ex3 Combat Range Tracker</h1>
 
 <table>
-<tr class="top_row"><th>Distance</th><th>0°</th></tr>
+<tr class="top_row"><th rowspan="2">Distance</th><th>Angle</th></tr>
+<tr><th>0°</th></tr>
 <tr>
   <th>Center of Battle<br> / Close</th>
-  <td><textarea rows="1" cols="20"></textarea><br><textarea rows="4" cols="20"></textarea></td>
+  <td>
+    <textarea rows="1" cols="20" class="close_center"></textarea><br>
+    <textarea rows="4" cols="20" class="close_add"></textarea></td>
 </tr>
 <tr>
   <th>Short</th>
