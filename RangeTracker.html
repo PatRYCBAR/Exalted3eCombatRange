@@ -43,15 +43,61 @@ div {
   font-size: 0px;
 }
 
+table, td, th{
+  border-color: black;
+  border-style: solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.top_row {
+  font-size: 24px;
+}
+
+textarea {
+  font-size: 16px;
+}
+
 </style>
 </head>
 <body>
+
+<h1>Ex3 Combat Range Tracker</h1>
+
+<table>
+<tr class="top_row"><th>Distance</th><th>0°</th></tr>
+<tr>
+  <th>Center of Battle<br> / Close</th>
+  <td><textarea rows="1" cols="20"></textarea><br><textarea rows="4" cols="20"></textarea></td>
+</tr>
+<tr>
+  <th>Short</th>
+  <td><textarea rows="3" cols="20"></textarea></td>
+</tr>
+<tr>
+  <th>Medium</th>
+  <td><textarea rows="3" cols="20"></textarea></td>
+</tr>
+<tr>
+  <th>Long</th>
+  <td><textarea rows="3" cols="20"></textarea></td>
+</tr>
+<tr>
+  <th>Extreme</th>
+  <td><textarea rows="2" cols="20"></textarea></td>
+</tr>
+<tr>
+  <th>Double Extreme</th>
+  <td><textarea rows="2" cols="20"></textarea></td>
+</tr>
+</table>
 
 <!--
 /***********************
 * FORM - Name
 ************************/
 -->
+
 
 
 
@@ -88,6 +134,8 @@ for (i = 0; i < coll.length; i++) {
     content.firstElementChild.focus();
   });
 }
+
+
 
 
 
