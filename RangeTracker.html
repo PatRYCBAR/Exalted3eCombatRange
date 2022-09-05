@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input{
+  padding: 5px;
+}
+
+.slim{
+  padding: 3px;
+}
+
+.collapsible {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border: none;
+  text-align: Right;
+  outline: none;
+}
+
+.collapsible:hover, .collapsible:focus {
+  background-color: #d1d1d1;
+}
+
+.active {
+  background-color: #d1d1f9;
+}
+
+.content {
+  display: none;
+  overflow: hidden;
+  background-color: #ededff;
+  border-color: #c1c1f9;
+  border-left-style: solid;
+}
+
+div {
+  margin-bottom: 0px;
+}
+
+.nothing {
+  height: 0px;
+  font-size: 0px;
+}
+
+</style>
+</head>
+<body>
+
+<!--
+/***********************
+* FORM - Name
+************************/
+-->
+
+
+
+
+
+
+<script>
+
+/************************
+* SCRIPTING
+*************************/
+
+
+/***************************
+* SCRIPTING - INITIALIZATION
+****************************/
+
+window.addEventListener('beforeunload', (event) => {
+  event.returnValue = `Are you sure you want to leave?`;
+});
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+    content.firstElementChild.focus();
+  });
+}
+
+
+
+/***************************
+* SCRIPTING - METHODS
+****************************/
+
+
+/***************************
+* METHODS - On Button Press
+****************************/
+
+
+/***************************
+* On Button Press (name)
+****************************/
+
+
+
+
+/*********************************
+* METHODS - Form Data Manipulation
+**********************************/
+
+
+
+
+
+/*********************************
+* METHODS - General Utility
+**********************************/
+
+function ObjCalled(inputID){
+  return document.getElementById(inputID);
+}
+
+function ValueCalled(inputID){
+  return ObjCalled(inputID).value;
+}
+
+function StringBetween(OriginalString, StartString, EndString, OffsetEnd){
+  return OriginalString.slice((OriginalString.indexOf(StartString) + StartString.length), (OriginalString.indexOf(EndString) + OffsetEnd));
+}
+
+function Collapse (buttonlabel, arealabel) {
+  if (ObjCalled(arealabel).style.display === "block") {
+    ObjCalled(arealabel).style.display = "none";
+    ObjCalled(buttonlabel).classList.toggle("active");
+  }
+}
+
+function Uncollapse (buttonlabel, arealabel) {
+  if (ObjCalled(arealabel).style.display != "block") {
+    ObjCalled(arealabel).style.display = "block";
+    ObjCalled(buttonlabel).classList.toggle("active");
+  }
+}
+
+function holdInMap(arrayOfIDs) {
+  let savedOnHold = new Map();
+  
+  arrayOfIDs.forEach((value, index, array) => {
+    savedOnHold.set(value, ValueCalled(value));
+  });
+  
+  return savedOnHold;
+}
+
+function loadHeldValues(savedOnHold){
+  savedOnHold.forEach((value, key) => {
+    ObjCalled(key).value = value;
+  });
+}
+
+function printByLine(arrayOfStringsByLine){
+  let printOut = "";
+  
+  arrayOfStringsByLine.forEach((value, index, array) => {
+    printOut = printOut.concat("" + value + "\n");
+  });
+  
+  return printOut;
+}
+
+
+
+/********************************
+* SCRIPTING - CLASSES / STRUCTURE
+*********************************/
+
+class Debugger {
+  constructor(debugWindowID, debugContainerID){
+    this.debugWindow = document.getElementById(debugWindowID);
+    this.printing = true;
+    
+    if (debugContainerID == undefined){
+      this.debugContainer = document.getElementById(debugWindowID);
+    }
+    else {
+      this.debugContainer = document.getElementById(debugContainerID);
+    }
+  }
+  
+  activate(){
+    this.debugContainer.style.display = "initial";
+    this.printing = true;
+  }
+  
+  deactivate(){
+    this.debugContainer.style.display = "none";
+    this.printing = false;
+  }
+  
+  debug(message){
+    if (this.printing){
+      let current = this.debugWindow.innerHTML;
+      
+      current += "\n" + message;
+      
+      this.debugWindow.innerHTML = current;
+    }
+  }
+  
+  //conditionalDebug(message, cqqqqqqqqqqqq
+}
+
+
+
+
+
+/************************
+* DATA
+*************************/
+
+
+
+/************************
+* DATA - LISTS
+*************************/
+
+</script>
+
+<!--
+/************************
+* LIST: Samplle
+*************************/
+-->
+
+<datalist id="sample_datalist">
+  <option value="Alpha">
+  <option value="Beta">
+  <option value="Charlie">
+</datalist>
+
+
+</body>
+</html>
